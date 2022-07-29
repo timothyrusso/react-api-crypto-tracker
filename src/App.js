@@ -16,7 +16,14 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="coin-app">
+      <div className="coin-search">
+        <h1 className="coin-text">Search a currency</h1>
+        <form></form>
+      </div>
+    </div>
+  );
 }
 
 export default App;

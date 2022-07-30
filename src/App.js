@@ -20,7 +20,13 @@ function App() {
     <div className="coin-app">
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
-        <form></form>
+        <form>
+          <imput
+            type="text"
+            placeholder="Search"
+            className="coin-input"
+          ></imput>
+        </form>
       </div>
     </div>
   );

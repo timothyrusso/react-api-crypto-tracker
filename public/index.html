@@ -38,11 +38,25 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <title>Crypto Tracker</title>
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
     <script>
       window.googletag = window.googletag || { cmd: [] };
       googletag.cmd.push(function () {
-        // Define a fixed-size ad slot.
-        // [START fixed_size_ad]
+        googletag
+          .defineSlot(
+            '/6355419/Travel/Europe',
+            [
+              [300, 250],
+              [728, 90],
+              [750, 200],
+            ],
+            'multi-size-ad'
+          )
+          .addService(googletag.pubads());
         googletag
           .defineSlot(
             '/6355419/Travel/Europe/France/Paris',
@@ -50,13 +64,39 @@
             'fixed-size-ad'
           )
           .addService(googletag.pubads());
-        // [END fixed_size_ad]
-        // Enable SRA and services.
+        googletag
+          .defineSlot('/6355419/Travel', ['fluid'], 'native-ad')
+          .addService(googletag.pubads());
+        var responsiveAdSlot = googletag
+          .defineSlot(
+            '/6355419/Travel/Europe',
+            [
+              [300, 250],
+              [728, 90],
+              [750, 200],
+            ],
+            'responsive-ad'
+          )
+          .addService(googletag.pubads());
+
+        var mapping = googletag
+          .sizeMapping()
+          .addSize(
+            [1024, 768],
+            [
+              [750, 200],
+              [728, 90],
+            ]
+          )
+          .addSize([640, 480], [300, 250])
+          .addSize([0, 0], [])
+          .build();
+
+        responsiveAdSlot.defineSizeMapping(mapping);
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
       });
     </script>
-    <title>Crypto Tracker</title>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -81,5 +121,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      googletag.cmd.push(function () {
+        googletag.display(
+          'multi-size-ad',
+          'fixed-size-ad',
+          'native-ad',
+          'responsive-ad'
+        );
+      });
+    </script>
   </body>
 </html>

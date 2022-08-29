@@ -49,3 +49,18 @@
 .coin-input::placeholder {
   color: #e2e2e2;
 }
+
+.ad-container {
+  border: solid;
+  width: 100%;
+  height: 100%;
+}
+
+.ad-slot {
+  border-style: dashed;
+  display: inline-block;
+}
+
+.native-slot {
+  width: 50%;
+}

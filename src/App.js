@@ -7,6 +7,11 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
 
+  const divStile = {
+    width: 300,
+    height: 250,
+  };
+
   useEffect(() => {
     axios
       .get(
@@ -28,9 +33,10 @@ function App() {
 
   return (
     <div className="coin-app">
-      <div class="ad-container">
-        <div id="fixed-size-ad" class="ad-slot"></div>
-      </div>
+      <div id="fixed-size-ad" className="ad-slot"></div>
+      <div id="multi-size-ad" className="ad-slot"></div>
+      <div id="native-ad" className="ad-slot native-slot"></div>
+      <div id="responsive-ad" className="ad-slot"></div>
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
         <form>

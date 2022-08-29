@@ -38,6 +38,24 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        // Define a fixed-size ad slot.
+        // [START fixed_size_ad]
+        googletag
+          .defineSlot(
+            '/6355419/Travel/Europe/France/Paris',
+            [300, 250],
+            'fixed-size-ad'
+          )
+          .addService(googletag.pubads());
+        // [END fixed_size_ad]
+        // Enable SRA and services.
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
     <title>Crypto Tracker</title>
   </head>
   <body>

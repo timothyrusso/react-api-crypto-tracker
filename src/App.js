@@ -28,6 +28,9 @@ function App() {
 
   return (
     <div className="coin-app">
+      <div class="ad-container">
+        <div id="fixed-size-ad" class="ad-slot"></div>
+      </div>
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
         <form>
